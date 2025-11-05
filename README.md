@@ -35,14 +35,32 @@ limitations under the License.
 
 > Create an array containing views with renamed keys for every element in a provided array.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/array-base-rekey-views
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import rekeyViews from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-rekey-views@esm/index.mjs';
+var rekeyViews = require( '@stdlib/array-base-rekey-views' );
 ```
 
 #### rekeyViews( arr, mapping )
@@ -101,6 +119,8 @@ The function has the following parameters:
 
 <section class="notes">
 
+## Notes
+
 -   The function returns views having **only** those keys which are present in a provided mapping object. Any keys which are **not** present in the provided mapping object, but are present in the original objects, are **omitted** during view creation.
 -   The function assumes that each object has the keys specified in a provided mapping object.
 -   Each view in the returned array shares the same memory as the corresponding elements in the input arrays. Accordingly, mutation of either an array element or a view will mutate the other.
@@ -115,15 +135,10 @@ The function has the following parameters:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@esm/index.mjs';
-import filledBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-filled-by@esm/index.mjs';
-import rekeyViews from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-rekey-views@esm/index.mjs';
+```javascript
+var discreteUniform = require( '@stdlib/random-base-discrete-uniform' );
+var filledBy = require( '@stdlib/array-base-filled-by' );
+var rekeyViews = require( '@stdlib/array-base-rekey-views' );
 
 function clbk( idx ) {
     return {
@@ -140,10 +155,6 @@ var mapping = {
 
 var out = rekeyViews( x, mapping );
 // returns [...]
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -167,7 +178,7 @@ var out = rekeyViews( x, mapping );
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 

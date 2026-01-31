@@ -42,6 +42,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import rekeyViews from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-rekey-views@esm/index.mjs';
+```
+The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/array-base-rekey-views/tags). For example,
+
+```javascript
 import rekeyViews from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-rekey-views@v0.1.0-esm/index.mjs';
 ```
 
@@ -125,7 +130,7 @@ The function has the following parameters:
 
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@esm/index.mjs';
 import filledBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-filled-by@esm/index.mjs';
-import rekeyViews from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-rekey-views@v0.1.0-esm/index.mjs';
+import rekeyViews from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-rekey-views@esm/index.mjs';
 
 function clbk( idx ) {
     return {

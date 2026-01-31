@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/array-base-rekey-views",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Create an array containing views with renamed keys for every element in a provided array.",
   "license": "Apache-2.0",
   "author": {

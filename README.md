@@ -42,7 +42,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import rekeyViews from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-rekey-views@deno/mod.js';
+import rekeyViews from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-rekey-views@v0.1.0-deno/mod.js';
 ```
 
 #### rekeyViews( arr, mapping )
@@ -120,7 +120,7 @@ The function has the following parameters:
 ```javascript
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-discrete-uniform@deno/mod.js';
 import filledBy from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-filled-by@deno/mod.js';
-import rekeyViews from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-rekey-views@deno/mod.js';
+import rekeyViews from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-base-rekey-views@v0.1.0-deno/mod.js';
 
 function clbk( idx ) {
     return {

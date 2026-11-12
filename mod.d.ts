@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,16 +16,31 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { Collection, AccessorArrayLike } from '@stdlib/types/array';
 
 /**
-* Create an array containing views with renamed keys for every element in a provided array.
+* Property key.
+*/
+type PropertyKey = string | number | symbol;
+
+/**
+* Returns an array containing views with renamed keys for every element in a provided array.
 *
-* @module @stdlib/array-base-rekey-views
+* ## Notes
+*
+* -   The function returns views having only those keys which are present in a provided mapping object. Any keys which are not present in the provided mapping object, but are present in the original objects, are omitted during view creation.
+* -   The function assumes that each object has the keys specified in a provided mapping object.
+* -   Each view in the returned array shares the same memory as the corresponding elements in the input arrays. Accordingly, mutation of either an array element or a view will mutate the other.
+*
+* @param arr - input array
+* @param mapping - object mapping existing keys to new key names
+* @returns output array
 *
 * @example
-* var rekeyViews = require( '@stdlib/array-base-rekey-views' );
-*
 * var x = [
 *     {
 *         'x': 1,
@@ -65,12 +80,9 @@
 * var y = x.slice();
 * // returns [ { 'x': 5, 'y': 2 }, { 'x': 3, 'y': 'beep' } ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function rekeyViews<T extends Record<PropertyKey, any>, OldKey extends keyof T, Mapping extends Record<OldKey, PropertyKey>>( arr: Collection<T> | AccessorArrayLike<T>, mapping: Mapping ): Array<{ [ K in OldKey as Mapping[K] ]: T[K] }>;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = rekeyViews;
